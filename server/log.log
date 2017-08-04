@@ -1,0 +1,670 @@
+2017-08-03 14:41:05,695 - root - CRITICAL -   File "core_module/app.py", line 35, in <module>
+    execute_sql(mysql, CREATE_COUNTER_DB)
+  File "core_module/app.py", line 29, in execute_sql
+    con = mysql.connect()
+  File "/root/anaconda3/lib/python3.5/site-packages/Flask_MySQL-1.4.0-py3.5.egg/flaskext/mysql.py", line 53, in connect
+    return pymysql.connect(**self.connect_args)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/__init__.py", line 90, in Connect
+    return Connection(*args, **kwargs)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 706, in __init__
+    self.connect()
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 932, in connect
+    self._request_authentication()
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 1152, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 1014, in _read_packet
+    packet.check_error()
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 393, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+
+2017-08-03 14:41:05,698 - root - CRITICAL - <class 'pymysql.err.InternalError'>: (1049, "Unknown database 'counter'")
+2017-08-03 14:42:47,987 - root - INFO - CREATE DATABASE IF NOT EXISTS counter;1
+2017-08-03 14:42:47,998 - root - CRITICAL -   File "core_module/app.py", line 35, in <module>
+    execute_sql(mysql, CREATE_COUNT_TBL)
+  File "core_module/app.py", line 30, in execute_sql
+    logging.info(statement + str(cursor.execute(statement)))
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 856, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 1057, in _read_query_result
+    result.read()
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 1340, in read
+    first_packet = self.connection._read_packet()
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 1014, in _read_packet
+    packet.check_error()
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 393, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+
+2017-08-03 14:42:47,999 - root - CRITICAL - <class 'pymysql.err.InternalError'>: (1046, 'No database selected')
+2017-08-03 14:46:25,946 - root - INFO - CREATE DATABASE IF NOT EXISTS counter;1
+2017-08-03 14:46:25,950 - root - INFO - USE counter;0
+2017-08-03 14:46:25,961 - root - CRITICAL -   File "core_module/app.py", line 37, in <module>
+    execute_sql(mysql, CREATE_COUNT_TBL)
+  File "core_module/app.py", line 31, in execute_sql
+    logging.info(statement + str(cursor.execute(statement)))
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 856, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 1057, in _read_query_result
+    result.read()
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 1340, in read
+    first_packet = self.connection._read_packet()
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 1014, in _read_packet
+    packet.check_error()
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 393, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+
+2017-08-03 14:46:25,961 - root - CRITICAL - <class 'pymysql.err.InternalError'>: (1046, 'No database selected')
+2017-08-03 14:51:37,702 - root - INFO - CREATE DATABASE IF NOT EXISTS counter;1
+2017-08-03 14:51:37,706 - root - INFO - USE counter;0
+2017-08-03 14:51:37,712 - root - CRITICAL -   File "core_module/app.py", line 37, in <module>
+    execute_sql(mysql, CREATE_COUNT_TBL)
+  File "core_module/app.py", line 31, in execute_sql
+    logging.info(statement + str(cursor.execute(statement)))
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 856, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 1057, in _read_query_result
+    result.read()
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 1340, in read
+    first_packet = self.connection._read_packet()
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 1014, in _read_packet
+    packet.check_error()
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 393, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+
+2017-08-03 14:51:37,712 - root - CRITICAL - <class 'pymysql.err.InternalError'>: (1046, 'No database selected')
+2017-08-03 15:02:34,809 - root - INFO - CREATE DATABASE IF NOT EXISTS counter;1
+2017-08-03 15:02:34,815 - root - CRITICAL -   File "core_module/app.py", line 35, in <module>
+    execute_sql(mysql, USE_CREATE_COUNTER_DB)
+
+2017-08-03 15:02:34,816 - root - CRITICAL - <class 'NameError'>: name 'USE_CREATE_COUNTER_DB' is not defined
+2017-08-03 15:05:40,354 - root - INFO - CREATE DATABASE IF NOT EXISTS counter;1
+2017-08-03 15:05:40,362 - root - INFO - USE counter; CREATE TABLE IF NOT EXISTS count ( num INT NOT NULL );0
+2017-08-03 15:05:40,457 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-03 15:05:40,469 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 15:05:41,149 - root - INFO - CREATE DATABASE IF NOT EXISTS counter;1
+2017-08-03 15:05:41,152 - root - INFO - USE counter; CREATE TABLE IF NOT EXISTS count ( num INT NOT NULL );0
+2017-08-03 15:05:41,180 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 15:05:41,181 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-03 15:07:19,140 - root - INFO - CREATE DATABASE IF NOT EXISTS counter;1
+2017-08-03 15:07:19,143 - root - INFO - USE counter; CREATE TABLE IF NOT EXISTS count ( num INT NOT NULL );0
+2017-08-03 15:07:19,158 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-03 15:07:19,160 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 15:07:19,627 - root - INFO - CREATE DATABASE IF NOT EXISTS counter;1
+2017-08-03 15:07:19,632 - root - INFO - USE counter; CREATE TABLE IF NOT EXISTS count ( num INT NOT NULL );0
+2017-08-03 15:07:19,647 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 15:07:19,648 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-03 15:11:48,343 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:11:48] "GET / HTTP/1.1" 500 -
+2017-08-03 15:11:48,379 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:11:48] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2017-08-03 15:11:48,382 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:11:48] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2017-08-03 15:11:48,386 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:11:48] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2017-08-03 15:26:29,784 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-03 15:26:29,786 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 15:26:30,253 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 15:26:30,254 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-03 15:28:56,768 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-03 15:28:56,770 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 15:28:57,231 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 15:28:57,232 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-03 15:29:10,788 - root - INFO - SELECT num FROM count;0
+2017-08-03 15:29:10,800 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:29:10] "GET / HTTP/1.1" 500 -
+2017-08-03 15:29:10,811 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:29:10] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2017-08-03 15:29:10,813 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:29:10] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2017-08-03 15:29:10,816 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:29:10] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2017-08-03 15:29:10,914 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:29:10] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2017-08-03 15:30:08,907 - werkzeug - INFO -  * Detected change in '/app/core_module/app.py', reloading
+2017-08-03 15:30:08,994 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 15:30:09,457 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 15:30:09,457 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-03 15:30:26,636 - werkzeug - INFO -  * Detected change in '/app/core_module/app.py', reloading
+2017-08-03 15:30:26,679 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 15:30:27,188 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 15:30:27,189 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-03 15:30:45,328 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-03 15:30:45,330 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 15:30:45,859 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 15:30:45,860 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-03 15:31:36,674 - root - INFO - SELECT num FROM count;0
+2017-08-03 15:31:36,699 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:31:36] "GET / HTTP/1.1" 500 -
+2017-08-03 15:31:44,632 - root - INFO - SELECT num FROM count;0
+2017-08-03 15:31:44,642 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:31:44] "GET / HTTP/1.1" 500 -
+2017-08-03 15:31:44,653 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:31:44] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2017-08-03 15:31:44,657 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:31:44] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2017-08-03 15:31:44,660 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:31:44] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2017-08-03 15:37:04,390 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-03 15:37:04,391 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 15:37:04,912 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 15:37:04,914 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-03 15:37:49,996 - root - INFO - SELECT num FROM count;0
+2017-08-03 15:37:50,015 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:37:50] "GET / HTTP/1.1" 500 -
+2017-08-03 15:37:50,020 - root - INFO - SELECT num FROM count;0
+2017-08-03 15:37:50,033 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:37:50] "GET / HTTP/1.1" 500 -
+2017-08-03 15:37:50,050 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:37:50] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2017-08-03 15:37:50,053 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:37:50] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2017-08-03 15:37:50,058 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:37:50] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2017-08-03 15:37:50,113 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:37:50] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2017-08-03 15:38:38,794 - werkzeug - INFO -  * Detected change in '/app/core_module/app.py', reloading
+2017-08-03 15:38:38,840 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 15:38:39,345 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 15:38:39,346 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-03 15:38:41,366 - werkzeug - INFO -  * Detected change in '/app/core_module/app.py', reloading
+2017-08-03 15:38:41,409 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 15:38:41,902 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 15:38:41,903 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-03 15:38:42,917 - werkzeug - INFO -  * Detected change in '/app/core_module/app.py', reloading
+2017-08-03 15:38:42,961 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 15:38:43,569 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 15:38:43,570 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-03 15:39:02,744 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-03 15:39:02,745 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 15:39:03,197 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 15:39:03,199 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-03 15:39:51,998 - root - INFO - SELECT num FROM count;0
+2017-08-03 15:39:52,040 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:39:52] "GET / HTTP/1.1" 500 -
+2017-08-03 15:39:54,313 - root - INFO - SELECT num FROM count;0
+2017-08-03 15:39:54,337 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:39:54] "GET / HTTP/1.1" 500 -
+2017-08-03 15:49:14,766 - root - CRITICAL -   File "core_module/app.py", line 17, in <module>
+    init_db.create_db("counter")
+  File "/app/core_module/init_db.py", line 19, in create_db
+    execute_query(CREATE_DB.format(db_name))
+
+2017-08-03 15:49:14,767 - root - CRITICAL - <class 'TypeError'>: execute_query() missing 1 required positional argument: 'connection'
+2017-08-03 15:50:13,250 - root - CRITICAL -   File "core_module/app.py", line 19, in <module>
+    init_db.create_entry("counter", "count", "count ( num )", "0")
+  File "/app/core_module/init_db.py", line 41, in create_entry
+    execute_query(CREATE_ENTRY.format(tbl_specs, entry_specs), connection)
+  File "/app/core_module/init_db.py", line 10, in execute_query
+    cursor.execute(query)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 856, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 1057, in _read_query_result
+    result.read()
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 1340, in read
+    first_packet = self.connection._read_packet()
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 1014, in _read_packet
+    packet.check_error()
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 393, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+
+2017-08-03 15:50:13,250 - root - CRITICAL - <class 'pymysql.err.ProgrammingError'>: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0' at line 1")
+2017-08-03 15:51:16,832 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-03 15:51:16,834 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 15:51:17,318 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 15:51:17,319 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-03 15:51:31,945 - root - INFO - SELECT num FROM count;2
+2017-08-03 15:51:31,969 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:51:31] "GET / HTTP/1.1" 500 -
+2017-08-03 15:51:31,995 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:51:31] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2017-08-03 15:51:32,004 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:51:32] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2017-08-03 15:51:32,028 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:51:32] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2017-08-03 15:54:43,971 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-03 15:54:43,973 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 15:54:44,439 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 15:54:44,440 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-03 15:54:54,713 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 15:54:54,715 - root - INFO - Results : 4
+2017-08-03 15:54:54,719 - root - INFO - Executing statement : UPDATE count SET num = (0,);
+2017-08-03 15:54:54,736 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:54:54] "GET / HTTP/1.1" 500 -
+2017-08-03 15:54:54,757 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:54:54] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2017-08-03 15:54:54,759 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:54:54] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2017-08-03 15:54:54,763 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:54:54] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2017-08-03 15:56:17,336 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-03 15:56:17,338 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 15:56:17,864 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 15:56:17,865 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-03 15:56:30,413 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 15:56:30,416 - root - INFO - Results : 6
+2017-08-03 15:56:30,419 - root - INFO - Executing statement : UPDATE count SET num = 0;
+2017-08-03 15:56:30,420 - root - INFO - Results : 0
+2017-08-03 15:56:30,424 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:56:30] "GET / HTTP/1.1" 200 -
+2017-08-03 15:56:32,420 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 15:56:32,422 - root - INFO - Results : 6
+2017-08-03 15:56:32,426 - root - INFO - Executing statement : UPDATE count SET num = 0;
+2017-08-03 15:56:32,428 - root - INFO - Results : 0
+2017-08-03 15:56:32,435 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:56:32] "GET / HTTP/1.1" 200 -
+2017-08-03 15:56:33,906 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 15:56:33,907 - root - INFO - Results : 6
+2017-08-03 15:56:33,912 - root - INFO - Executing statement : UPDATE count SET num = 0;
+2017-08-03 15:56:33,914 - root - INFO - Results : 0
+2017-08-03 15:56:33,921 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:56:33] "GET / HTTP/1.1" 200 -
+2017-08-03 15:56:36,099 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 15:56:36,102 - root - INFO - Results : 6
+2017-08-03 15:56:36,109 - root - INFO - Executing statement : UPDATE count SET num = 0;
+2017-08-03 15:56:36,111 - root - INFO - Results : 0
+2017-08-03 15:56:36,115 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:56:36] "GET / HTTP/1.1" 200 -
+2017-08-03 15:56:37,062 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 15:56:37,064 - root - INFO - Results : 6
+2017-08-03 15:56:37,069 - root - INFO - Executing statement : UPDATE count SET num = 0;
+2017-08-03 15:56:37,070 - root - INFO - Results : 0
+2017-08-03 15:56:37,075 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:56:37] "GET / HTTP/1.1" 200 -
+2017-08-03 15:56:37,898 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 15:56:37,901 - root - INFO - Results : 6
+2017-08-03 15:56:37,904 - root - INFO - Executing statement : UPDATE count SET num = 0;
+2017-08-03 15:56:37,906 - root - INFO - Results : 0
+2017-08-03 15:56:37,910 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:56:37] "GET / HTTP/1.1" 200 -
+2017-08-03 15:56:57,244 - werkzeug - INFO -  * Detected change in '/app/core_module/app.py', reloading
+2017-08-03 15:56:57,283 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 15:56:57,781 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 15:56:57,782 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-03 15:57:12,481 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-03 15:57:12,483 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 15:57:13,033 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 15:57:13,034 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-03 15:57:22,220 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 15:57:22,223 - root - INFO - Results : 9
+2017-08-03 15:57:22,229 - root - INFO - Executing statement : UPDATE count SET num = 0;
+2017-08-03 15:57:22,231 - root - INFO - Results : 0
+2017-08-03 15:57:22,234 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:57:22] "GET / HTTP/1.1" 200 -
+2017-08-03 15:57:23,349 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 15:57:23,351 - root - INFO - Results : 9
+2017-08-03 15:57:23,357 - root - INFO - Executing statement : UPDATE count SET num = 0;
+2017-08-03 15:57:23,359 - root - INFO - Results : 0
+2017-08-03 15:57:23,364 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:57:23] "GET / HTTP/1.1" 200 -
+2017-08-03 15:57:24,993 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 15:57:24,996 - root - INFO - Results : 9
+2017-08-03 15:57:25,000 - root - INFO - Executing statement : UPDATE count SET num = 0;
+2017-08-03 15:57:25,001 - root - INFO - Results : 0
+2017-08-03 15:57:25,007 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:57:25] "GET / HTTP/1.1" 200 -
+2017-08-03 15:57:26,372 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 15:57:26,374 - root - INFO - Results : 9
+2017-08-03 15:57:26,379 - root - INFO - Executing statement : UPDATE count SET num = 0;
+2017-08-03 15:57:26,380 - root - INFO - Results : 0
+2017-08-03 15:57:26,385 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:57:26] "GET / HTTP/1.1" 200 -
+2017-08-03 15:57:27,722 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 15:57:27,723 - root - INFO - Results : 9
+2017-08-03 15:57:27,729 - root - INFO - Executing statement : UPDATE count SET num = 0;
+2017-08-03 15:57:27,731 - root - INFO - Results : 0
+2017-08-03 15:57:27,736 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:57:27] "GET / HTTP/1.1" 200 -
+2017-08-03 15:57:28,796 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 15:57:28,798 - root - INFO - Results : 9
+2017-08-03 15:57:28,802 - root - INFO - Executing statement : UPDATE count SET num = 0;
+2017-08-03 15:57:28,803 - root - INFO - Results : 0
+2017-08-03 15:57:28,807 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:57:28] "GET / HTTP/1.1" 200 -
+2017-08-03 15:57:29,614 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 15:57:29,615 - root - INFO - Results : 9
+2017-08-03 15:57:29,619 - root - INFO - Executing statement : UPDATE count SET num = 0;
+2017-08-03 15:57:29,620 - root - INFO - Results : 0
+2017-08-03 15:57:29,624 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:57:29] "GET / HTTP/1.1" 200 -
+2017-08-03 15:58:36,451 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-03 15:58:36,453 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 15:58:36,970 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 15:58:36,971 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-03 15:58:37,154 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 15:58:37,156 - root - INFO - Results : 11
+2017-08-03 15:58:37,162 - root - INFO - Executing statement : UPDATE count SET num = 1;
+2017-08-03 15:58:37,164 - root - INFO - Results : 11
+2017-08-03 15:58:37,171 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:58:37] "GET / HTTP/1.1" 200 -
+2017-08-03 15:58:38,541 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 15:58:38,543 - root - INFO - Results : 11
+2017-08-03 15:58:38,546 - root - INFO - Executing statement : UPDATE count SET num = 2;
+2017-08-03 15:58:38,547 - root - INFO - Results : 11
+2017-08-03 15:58:38,551 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:58:38] "GET / HTTP/1.1" 200 -
+2017-08-03 15:58:39,388 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 15:58:39,390 - root - INFO - Results : 11
+2017-08-03 15:58:39,395 - root - INFO - Executing statement : UPDATE count SET num = 3;
+2017-08-03 15:58:39,396 - root - INFO - Results : 11
+2017-08-03 15:58:39,400 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 15:58:39] "GET / HTTP/1.1" 200 -
+2017-08-03 15:59:58,530 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-03 15:59:58,534 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 15:59:59,002 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 15:59:59,003 - werkzeug - INFO -  * Debugger pin code: 206-468-152
+2017-08-03 16:00:03,179 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 16:00:03,182 - root - INFO - Results : 13
+2017-08-03 16:00:03,187 - root - INFO - Executing statement : UPDATE count SET num = 4;
+2017-08-03 16:00:03,188 - root - INFO - Results : 13
+2017-08-03 16:00:03,198 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 16:00:03] "GET / HTTP/1.1" 200 -
+2017-08-03 16:00:04,266 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 16:00:04,268 - root - INFO - Results : 13
+2017-08-03 16:00:04,272 - root - INFO - Executing statement : UPDATE count SET num = 5;
+2017-08-03 16:00:04,273 - root - INFO - Results : 13
+2017-08-03 16:00:04,278 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 16:00:04] "GET / HTTP/1.1" 200 -
+2017-08-03 16:00:05,108 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 16:00:05,111 - root - INFO - Results : 13
+2017-08-03 16:00:05,116 - root - INFO - Executing statement : UPDATE count SET num = 6;
+2017-08-03 16:00:05,117 - root - INFO - Results : 13
+2017-08-03 16:00:05,122 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 16:00:05] "GET / HTTP/1.1" 200 -
+2017-08-03 16:00:05,857 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 16:00:05,859 - root - INFO - Results : 13
+2017-08-03 16:00:05,863 - root - INFO - Executing statement : UPDATE count SET num = 7;
+2017-08-03 16:00:05,865 - root - INFO - Results : 13
+2017-08-03 16:00:05,869 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 16:00:05] "GET / HTTP/1.1" 200 -
+2017-08-03 16:16:36,297 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-03 16:16:36,299 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 16:16:36,766 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 16:16:36,768 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-03 16:17:14,220 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 16:17:14,222 - root - INFO - Results : 15
+2017-08-03 16:17:14,228 - root - INFO - Executing statement : UPDATE count SET num = 8;
+2017-08-03 16:17:14,231 - root - INFO - Results : 15
+2017-08-03 16:17:14,237 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 16:17:14] "GET / HTTP/1.1" 200 -
+2017-08-03 16:17:15,981 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 16:17:15,983 - root - INFO - Results : 15
+2017-08-03 16:17:15,987 - root - INFO - Executing statement : UPDATE count SET num = 9;
+2017-08-03 16:17:15,988 - root - INFO - Results : 15
+2017-08-03 16:17:15,991 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 16:17:15] "GET / HTTP/1.1" 200 -
+2017-08-03 16:17:16,853 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 16:17:16,856 - root - INFO - Results : 15
+2017-08-03 16:17:16,863 - root - INFO - Executing statement : UPDATE count SET num = 10;
+2017-08-03 16:17:16,865 - root - INFO - Results : 15
+2017-08-03 16:17:16,870 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 16:17:16] "GET / HTTP/1.1" 200 -
+2017-08-03 16:17:17,547 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 16:17:17,549 - root - INFO - Results : 15
+2017-08-03 16:17:17,554 - root - INFO - Executing statement : UPDATE count SET num = 11;
+2017-08-03 16:17:17,556 - root - INFO - Results : 15
+2017-08-03 16:17:17,560 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 16:17:17] "GET / HTTP/1.1" 200 -
+2017-08-03 16:17:18,024 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 16:17:18,026 - root - INFO - Results : 15
+2017-08-03 16:17:18,030 - root - INFO - Executing statement : UPDATE count SET num = 12;
+2017-08-03 16:17:18,032 - root - INFO - Results : 15
+2017-08-03 16:17:18,037 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 16:17:18] "GET / HTTP/1.1" 200 -
+2017-08-03 16:17:18,468 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 16:17:18,469 - root - INFO - Results : 15
+2017-08-03 16:17:18,473 - root - INFO - Executing statement : UPDATE count SET num = 13;
+2017-08-03 16:17:18,474 - root - INFO - Results : 15
+2017-08-03 16:17:18,479 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 16:17:18] "GET / HTTP/1.1" 200 -
+2017-08-03 16:17:18,827 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 16:17:18,829 - root - INFO - Results : 15
+2017-08-03 16:17:18,835 - root - INFO - Executing statement : UPDATE count SET num = 14;
+2017-08-03 16:17:18,837 - root - INFO - Results : 15
+2017-08-03 16:17:18,842 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 16:17:18] "GET / HTTP/1.1" 200 -
+2017-08-03 16:17:19,353 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 16:17:19,355 - root - INFO - Results : 15
+2017-08-03 16:17:19,362 - root - INFO - Executing statement : UPDATE count SET num = 15;
+2017-08-03 16:17:19,363 - root - INFO - Results : 15
+2017-08-03 16:17:19,369 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 16:17:19] "GET / HTTP/1.1" 200 -
+2017-08-03 18:37:48,825 - root - CRITICAL -   File "core_module/app.py", line 17, in <module>
+    init_db.create_db("counter")
+  File "/app/core_module/init_db.py", line 17, in create_db
+    cursorclass=pymysql.cursors.DictCursor)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/__init__.py", line 90, in Connect
+    return Connection(*args, **kwargs)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 706, in __init__
+    self.connect()
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 963, in connect
+    raise exc
+
+2017-08-03 18:37:48,826 - root - CRITICAL - <class 'pymysql.err.OperationalError'>: (2003, "Can't connect to MySQL server on 'db' ([Errno 111] Connection refused)")
+2017-08-03 18:39:23,634 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-03 18:39:23,636 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 18:39:24,111 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 18:39:24,112 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-03 18:40:17,384 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 18:40:17,387 - root - INFO - Results : 2
+2017-08-03 18:40:17,392 - root - INFO - Executing statement : UPDATE count SET num = 1;
+2017-08-03 18:40:17,393 - root - INFO - Results : 2
+2017-08-03 18:40:17,399 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 18:40:17] "GET / HTTP/1.1" 200 -
+2017-08-03 18:40:19,544 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 18:40:19,545 - root - INFO - Results : 2
+2017-08-03 18:40:19,549 - root - INFO - Executing statement : UPDATE count SET num = 2;
+2017-08-03 18:40:19,550 - root - INFO - Results : 2
+2017-08-03 18:40:19,554 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 18:40:19] "GET / HTTP/1.1" 200 -
+2017-08-03 18:40:20,378 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 18:40:20,382 - root - INFO - Results : 2
+2017-08-03 18:40:20,388 - root - INFO - Executing statement : UPDATE count SET num = 3;
+2017-08-03 18:40:20,390 - root - INFO - Results : 2
+2017-08-03 18:40:20,396 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 18:40:20] "GET / HTTP/1.1" 200 -
+2017-08-03 18:40:21,100 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 18:40:21,103 - root - INFO - Results : 2
+2017-08-03 18:40:21,110 - root - INFO - Executing statement : UPDATE count SET num = 4;
+2017-08-03 18:40:21,112 - root - INFO - Results : 2
+2017-08-03 18:40:21,118 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 18:40:21] "GET / HTTP/1.1" 200 -
+2017-08-03 18:40:56,063 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-03 18:40:56,065 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 18:40:56,542 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 18:40:56,543 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-03 18:58:38,812 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-03 18:58:38,813 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 18:58:39,295 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 18:58:39,296 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-03 18:58:48,309 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 18:58:48,311 - root - INFO - Results : 6
+2017-08-03 18:58:48,316 - root - INFO - Executing statement : UPDATE count SET num = 5;
+2017-08-03 18:58:48,317 - root - INFO - Results : 6
+2017-08-03 18:58:48,320 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 18:58:48] "GET / HTTP/1.1" 200 -
+2017-08-03 18:58:49,483 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 18:58:49,484 - root - INFO - Results : 6
+2017-08-03 18:58:49,489 - root - INFO - Executing statement : UPDATE count SET num = 6;
+2017-08-03 18:58:49,490 - root - INFO - Results : 6
+2017-08-03 18:58:49,498 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 18:58:49] "GET / HTTP/1.1" 200 -
+2017-08-03 18:58:50,297 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 18:58:50,299 - root - INFO - Results : 6
+2017-08-03 18:58:50,303 - root - INFO - Executing statement : UPDATE count SET num = 7;
+2017-08-03 18:58:50,304 - root - INFO - Results : 6
+2017-08-03 18:58:50,309 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 18:58:50] "GET / HTTP/1.1" 200 -
+2017-08-03 18:58:51,073 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-03 18:58:51,075 - root - INFO - Results : 6
+2017-08-03 18:58:51,080 - root - INFO - Executing statement : UPDATE count SET num = 8;
+2017-08-03 18:58:51,081 - root - INFO - Results : 6
+2017-08-03 18:58:51,086 - werkzeug - INFO - 172.19.0.1 - - [03/Aug/2017 18:58:51] "GET / HTTP/1.1" 200 -
+2017-08-03 19:02:22,578 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-03 19:02:22,579 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 19:02:23,039 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 19:02:23,040 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-03 19:06:46,206 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-03 19:06:46,208 - werkzeug - INFO -  * Restarting with stat
+2017-08-03 19:06:46,732 - werkzeug - WARNING -  * Debugger is active!
+2017-08-03 19:06:46,733 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-04 00:15:55,026 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-04 00:15:55,029 - werkzeug - INFO -  * Restarting with stat
+2017-08-04 00:15:55,514 - werkzeug - WARNING -  * Debugger is active!
+2017-08-04 00:15:55,520 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-04 00:16:20,993 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 00:16:20,995 - root - INFO - Results : 12
+2017-08-04 00:16:21,000 - root - INFO - Executing statement : UPDATE count SET num = 9;
+2017-08-04 00:16:21,002 - root - INFO - Results : 12
+2017-08-04 00:16:21,008 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 00:16:21] "GET / HTTP/1.1" 200 -
+2017-08-04 00:16:21,824 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 00:16:21,825 - root - INFO - Results : 12
+2017-08-04 00:16:21,829 - root - INFO - Executing statement : UPDATE count SET num = 10;
+2017-08-04 00:16:21,830 - root - INFO - Results : 12
+2017-08-04 00:16:21,836 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 00:16:21] "GET / HTTP/1.1" 200 -
+2017-08-04 00:16:22,458 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 00:16:22,460 - root - INFO - Results : 12
+2017-08-04 00:16:22,466 - root - INFO - Executing statement : UPDATE count SET num = 11;
+2017-08-04 00:16:22,469 - root - INFO - Results : 12
+2017-08-04 00:16:22,476 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 00:16:22] "GET / HTTP/1.1" 200 -
+2017-08-04 00:16:23,079 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 00:16:23,080 - root - INFO - Results : 12
+2017-08-04 00:16:23,084 - root - INFO - Executing statement : UPDATE count SET num = 12;
+2017-08-04 00:16:23,086 - root - INFO - Results : 12
+2017-08-04 00:16:23,091 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 00:16:23] "GET / HTTP/1.1" 200 -
+2017-08-04 00:16:23,710 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 00:16:23,712 - root - INFO - Results : 12
+2017-08-04 00:16:23,717 - root - INFO - Executing statement : UPDATE count SET num = 13;
+2017-08-04 00:16:23,719 - root - INFO - Results : 12
+2017-08-04 00:16:23,726 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 00:16:23] "GET / HTTP/1.1" 200 -
+2017-08-04 00:16:24,325 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 00:16:24,327 - root - INFO - Results : 12
+2017-08-04 00:16:24,332 - root - INFO - Executing statement : UPDATE count SET num = 14;
+2017-08-04 00:16:24,334 - root - INFO - Results : 12
+2017-08-04 00:16:24,338 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 00:16:24] "GET / HTTP/1.1" 200 -
+2017-08-04 00:20:10,164 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-04 00:20:10,166 - werkzeug - INFO -  * Restarting with stat
+2017-08-04 00:20:10,662 - werkzeug - WARNING -  * Debugger is active!
+2017-08-04 00:20:10,663 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-04 00:20:31,546 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 00:20:31,549 - root - INFO - Results : 14
+2017-08-04 00:20:31,553 - root - INFO - Executing statement : UPDATE count SET num = 15;
+2017-08-04 00:20:31,554 - root - INFO - Results : 14
+2017-08-04 00:20:31,559 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 00:20:31] "GET / HTTP/1.1" 200 -
+2017-08-04 00:20:32,996 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 00:20:32,997 - root - INFO - Results : 14
+2017-08-04 00:20:33,002 - root - INFO - Executing statement : UPDATE count SET num = 16;
+2017-08-04 00:20:33,004 - root - INFO - Results : 14
+2017-08-04 00:20:33,010 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 00:20:33] "GET / HTTP/1.1" 200 -
+2017-08-04 00:20:35,524 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 00:20:35,526 - root - INFO - Results : 14
+2017-08-04 00:20:35,529 - root - INFO - Executing statement : UPDATE count SET num = 17;
+2017-08-04 00:20:35,531 - root - INFO - Results : 14
+2017-08-04 00:20:35,536 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 00:20:35] "GET / HTTP/1.1" 200 -
+2017-08-04 00:20:36,806 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 00:20:36,809 - root - INFO - Results : 14
+2017-08-04 00:20:36,814 - root - INFO - Executing statement : UPDATE count SET num = 18;
+2017-08-04 00:20:36,815 - root - INFO - Results : 14
+2017-08-04 00:20:36,819 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 00:20:36] "GET / HTTP/1.1" 200 -
+2017-08-04 00:20:37,966 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 00:20:37,969 - root - INFO - Results : 14
+2017-08-04 00:20:37,977 - root - INFO - Executing statement : UPDATE count SET num = 19;
+2017-08-04 00:20:37,980 - root - INFO - Results : 14
+2017-08-04 00:20:37,985 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 00:20:37] "GET / HTTP/1.1" 200 -
+2017-08-04 00:28:53,540 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-04 00:28:53,542 - werkzeug - INFO -  * Restarting with stat
+2017-08-04 00:28:54,011 - werkzeug - WARNING -  * Debugger is active!
+2017-08-04 00:28:54,012 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-04 00:29:18,398 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 00:29:18,401 - root - INFO - Results : 16
+2017-08-04 00:29:18,405 - root - INFO - Executing statement : UPDATE count SET num = 20;
+2017-08-04 00:29:18,407 - root - INFO - Results : 16
+2017-08-04 00:29:18,411 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 00:29:18] "GET / HTTP/1.1" 200 -
+2017-08-04 00:29:19,336 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 00:29:19,337 - root - INFO - Results : 16
+2017-08-04 00:29:19,341 - root - INFO - Executing statement : UPDATE count SET num = 21;
+2017-08-04 00:29:19,342 - root - INFO - Results : 16
+2017-08-04 00:29:19,348 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 00:29:19] "GET / HTTP/1.1" 200 -
+2017-08-04 00:29:20,140 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 00:29:20,141 - root - INFO - Results : 16
+2017-08-04 00:29:20,145 - root - INFO - Executing statement : UPDATE count SET num = 22;
+2017-08-04 00:29:20,146 - root - INFO - Results : 16
+2017-08-04 00:29:20,153 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 00:29:20] "GET / HTTP/1.1" 200 -
+2017-08-04 00:29:20,980 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 00:29:20,983 - root - INFO - Results : 16
+2017-08-04 00:29:20,992 - root - INFO - Executing statement : UPDATE count SET num = 23;
+2017-08-04 00:29:20,993 - root - INFO - Results : 16
+2017-08-04 00:29:20,997 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 00:29:20] "GET / HTTP/1.1" 200 -
+2017-08-04 00:29:21,805 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 00:29:21,807 - root - INFO - Results : 16
+2017-08-04 00:29:21,810 - root - INFO - Executing statement : UPDATE count SET num = 24;
+2017-08-04 00:29:21,811 - root - INFO - Results : 16
+2017-08-04 00:29:21,816 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 00:29:21] "GET / HTTP/1.1" 200 -
+2017-08-04 00:29:22,578 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 00:29:22,580 - root - INFO - Results : 16
+2017-08-04 00:29:22,585 - root - INFO - Executing statement : UPDATE count SET num = 25;
+2017-08-04 00:29:22,586 - root - INFO - Results : 16
+2017-08-04 00:29:22,592 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 00:29:22] "GET / HTTP/1.1" 200 -
+2017-08-04 00:33:06,793 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-04 00:33:06,795 - werkzeug - INFO -  * Restarting with stat
+2017-08-04 00:33:07,256 - werkzeug - WARNING -  * Debugger is active!
+2017-08-04 00:33:07,257 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-04 00:33:31,453 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-04 00:33:31,455 - werkzeug - INFO -  * Restarting with stat
+2017-08-04 00:33:31,989 - werkzeug - WARNING -  * Debugger is active!
+2017-08-04 00:33:31,990 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-04 00:35:38,530 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-04 00:35:38,532 - werkzeug - INFO -  * Restarting with stat
+2017-08-04 00:35:38,999 - werkzeug - WARNING -  * Debugger is active!
+2017-08-04 00:35:39,001 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-04 00:52:28,886 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 00:52:28,890 - root - INFO - Results : 22
+2017-08-04 00:52:28,895 - root - INFO - Executing statement : UPDATE count SET num = 26;
+2017-08-04 00:52:28,897 - root - INFO - Results : 22
+2017-08-04 00:52:28,903 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 00:52:28] "GET / HTTP/1.1" 200 -
+2017-08-04 00:53:21,554 - root - CRITICAL -   File "core_module/app.py", line 17, in <module>
+    init_db.create_db("counter")
+  File "/app/core_module/init_db.py", line 17, in create_db
+    cursorclass=pymysql.cursors.DictCursor)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/__init__.py", line 90, in Connect
+    return Connection(*args, **kwargs)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 706, in __init__
+    self.connect()
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 963, in connect
+    raise exc
+
+2017-08-04 00:53:21,555 - root - CRITICAL - <class 'pymysql.err.OperationalError'>: (2003, "Can't connect to MySQL server on 'db' ([Errno 111] Connection refused)")
+2017-08-04 00:55:12,224 - root - CRITICAL -   File "core_module/app.py", line 17, in <module>
+    init_db.create_db("counter")
+  File "/app/core_module/init_db.py", line 17, in create_db
+    cursorclass=pymysql.cursors.DictCursor)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/__init__.py", line 90, in Connect
+    return Connection(*args, **kwargs)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 706, in __init__
+    self.connect()
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 963, in connect
+    raise exc
+
+2017-08-04 00:55:12,224 - root - CRITICAL - <class 'pymysql.err.OperationalError'>: (2003, "Can't connect to MySQL server on 'db' ([Errno 111] Connection refused)")
+2017-08-04 01:00:26,455 - root - CRITICAL -   File "core_module/app.py", line 17, in <module>
+    init_db.create_db("counter")
+  File "/app/core_module/init_db.py", line 17, in create_db
+    cursorclass=pymysql.cursors.DictCursor)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/__init__.py", line 90, in Connect
+    return Connection(*args, **kwargs)
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 706, in __init__
+    self.connect()
+  File "/root/anaconda3/lib/python3.5/site-packages/PyMySQL-0.7.11-py3.5.egg/pymysql/connections.py", line 963, in connect
+    raise exc
+
+2017-08-04 01:00:26,456 - root - CRITICAL - <class 'pymysql.err.OperationalError'>: (2003, "Can't connect to MySQL server on 'db' ([Errno 111] Connection refused)")
+2017-08-04 01:02:16,686 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-04 01:02:16,689 - werkzeug - INFO -  * Restarting with stat
+2017-08-04 01:02:17,695 - werkzeug - WARNING -  * Debugger is active!
+2017-08-04 01:02:17,696 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-04 01:02:29,791 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 01:02:29] "GET / HTTP/1.1" 500 -
+2017-08-04 01:02:29,815 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 01:02:29] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2017-08-04 01:02:29,819 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 01:02:29] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2017-08-04 01:02:29,828 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 01:02:29] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2017-08-04 01:03:42,614 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-04 01:03:42,616 - werkzeug - INFO -  * Restarting with stat
+2017-08-04 01:03:43,369 - werkzeug - WARNING -  * Debugger is active!
+2017-08-04 01:03:43,371 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-04 01:04:34,842 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 01:04:34,847 - root - INFO - Results : 4
+2017-08-04 01:04:34,853 - root - INFO - Executing statement : UPDATE count SET num = 1;
+2017-08-04 01:04:34,855 - root - INFO - Results : 4
+2017-08-04 01:04:34,860 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 01:04:34] "GET / HTTP/1.1" 200 -
+2017-08-04 01:04:36,389 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 01:04:36,392 - root - INFO - Results : 4
+2017-08-04 01:04:36,397 - root - INFO - Executing statement : UPDATE count SET num = 2;
+2017-08-04 01:04:36,399 - root - INFO - Results : 4
+2017-08-04 01:04:36,405 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 01:04:36] "GET / HTTP/1.1" 200 -
+2017-08-04 01:04:38,654 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 01:04:38,657 - root - INFO - Results : 4
+2017-08-04 01:04:38,663 - root - INFO - Executing statement : UPDATE count SET num = 3;
+2017-08-04 01:04:38,665 - root - INFO - Results : 4
+2017-08-04 01:04:38,671 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 01:04:38] "GET / HTTP/1.1" 200 -
+2017-08-04 01:57:50,302 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2017-08-04 01:57:50,306 - werkzeug - INFO -  * Restarting with stat
+2017-08-04 01:57:51,054 - werkzeug - WARNING -  * Debugger is active!
+2017-08-04 01:57:51,056 - werkzeug - INFO -  * Debugger pin code: 122-854-534
+2017-08-04 01:58:14,006 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 01:58:14,008 - root - INFO - Results : 6
+2017-08-04 01:58:14,017 - root - INFO - Executing statement : UPDATE count SET num = 4;
+2017-08-04 01:58:14,019 - root - INFO - Results : 6
+2017-08-04 01:58:14,021 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 01:58:14] "GET / HTTP/1.1" 200 -
+2017-08-04 01:58:15,148 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 01:58:15,152 - root - INFO - Results : 6
+2017-08-04 01:58:15,156 - root - INFO - Executing statement : UPDATE count SET num = 5;
+2017-08-04 01:58:15,158 - root - INFO - Results : 6
+2017-08-04 01:58:15,161 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 01:58:15] "GET / HTTP/1.1" 200 -
+2017-08-04 01:58:16,015 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 01:58:16,019 - root - INFO - Results : 6
+2017-08-04 01:58:16,023 - root - INFO - Executing statement : UPDATE count SET num = 6;
+2017-08-04 01:58:16,025 - root - INFO - Results : 6
+2017-08-04 01:58:16,027 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 01:58:16] "GET / HTTP/1.1" 200 -
+2017-08-04 01:58:18,703 - root - INFO - Executing statement : SELECT num FROM count;
+2017-08-04 01:58:18,706 - root - INFO - Results : 6
+2017-08-04 01:58:18,711 - root - INFO - Executing statement : UPDATE count SET num = 7;
+2017-08-04 01:58:18,713 - root - INFO - Results : 6
+2017-08-04 01:58:18,716 - werkzeug - INFO - 172.19.0.1 - - [04/Aug/2017 01:58:18] "GET / HTTP/1.1" 200 -
